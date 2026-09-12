@@ -1,10 +1,14 @@
-import Accounts.ContaCorrente;
-import Accounts.ContaPoupanca;
+import Exceptions.InvalidAgeException;
+import Exceptions.InvalidCPFException;
+import Usuarios.UsuarioTitular;
 
 public class Main {
-    public static void main() {
-//        ContaPoupanca poupanca = new ContaPoupanca();
-//        poupanca.investir();
-//        poupanca.resgatar();
+    static void main() {
+        try {
+            UsuarioTitular usuarioTitular = new UsuarioTitular();
+            usuarioTitular.fazerCadastro();
+        } catch (InvalidAgeException | InvalidCPFException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
