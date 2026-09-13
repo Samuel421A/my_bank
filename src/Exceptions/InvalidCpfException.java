@@ -1,7 +1,7 @@
 package Exceptions;
 
-public class InvalidCPFException extends RuntimeException {
-    public InvalidCPFException(String message) {
+public class InvalidCpfException extends RuntimeException {
+    public InvalidCpfException(String message) {
         super(message);
     }
 }

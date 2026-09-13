@@ -1,7 +1,7 @@
 package Exceptions;
 
-public class IncorrectPixKeyException extends RuntimeException {
-    public IncorrectPixKeyException(String message) {
+public class InvalidPixKeyException extends RuntimeException {
+    public InvalidPixKeyException(String message) {
         super(message);
     }
 }
