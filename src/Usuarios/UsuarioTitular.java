@@ -2,12 +2,14 @@ package Usuarios;
 
 import Accounts.ContaCorrente;
 import Accounts.ContaPoupanca;
+import Exceptions.IncorrectPasswordException;
 import Exceptions.InvalidOptionException;
 
 import java.util.Scanner;
 
 public class UsuarioTitular {
     private static final int SENHA_TRANSACOES = 546157;
+    private static final String SENHA_CORRETA = "My_bank3745!";
     private final ContaCorrente contaCorrente;
     private final ContaPoupanca contaPoupanca = new ContaPoupanca();
 
@@ -21,6 +23,16 @@ public class UsuarioTitular {
         System.out.println("[1] FAZER PIX");
         System.out.println("[2] INVESTIR NA POUPANÇA");
         System.out.println("[3] RESGATAR DA POUPANÇA");
+    }
+
+    public void login() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite a sua senha:");
+        String senha = scanner.nextLine();
+
+        if (!senha.equals(SENHA_CORRETA)) {
+            throw new IncorrectPasswordException("SENHA INCORRETA!");
+        }
     }
 
     public void escolherOpcao() {

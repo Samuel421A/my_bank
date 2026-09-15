@@ -7,6 +7,7 @@ public class Main {
     static void main() {
         try {
             UsuarioTitular usuarioTitular = new UsuarioTitular();
+            usuarioTitular.login();
             usuarioTitular.exibirMenu();
             usuarioTitular.escolherOpcao();
         } catch (InvalidAgeException | InvalidCpfException | IncorrectPasswordException e) {
